@@ -7,6 +7,7 @@ class Home extends CI_Controller
     $data_kecamatan = [
       [
         "nama" => "aluh-aluh",
+        "warna" => '',
         "koordinat" => [
           [-3.5329, 114.6051],
           [-3.5328, 114.5859],
@@ -65,7 +66,7 @@ class Home extends CI_Controller
       ],
       [
         "nama" => "aranio",
-        "koordinat" => [
+        "warna" => '', "koordinat" => [
           [-3.6343, 115.1221],
           [-3.6457, 115.1059],
           [-3.6643, 115.0899],
@@ -166,7 +167,7 @@ class Home extends CI_Controller
       [
 
         "nama" => "astambul",
-        "koordinat" => [
+        "warna" => '', "koordinat" => [
           [-3.3977, 114.9314],
           [-3.4001, 114.9273],
           [-3.4004, 114.9222],
@@ -209,7 +210,7 @@ class Home extends CI_Controller
       ],
       [
         "nama" => "beruntung-baru",
-        "koordinat" => [
+        "warna" => '', "koordinat" => [
           [-3.4916, 114.6145],
           [-3.5024, 114.6153],
           [-3.4786, 114.6108],
@@ -234,7 +235,7 @@ class Home extends CI_Controller
       ],
       [
         "nama" => "gambut",
-        "koordinat" => [
+        "warna" => '', "koordinat" => [
           [-3.4747, 114.6615],
           [-3.4723, 114.656],
           [-3.4716, 114.6415],
@@ -261,7 +262,7 @@ class Home extends CI_Controller
         ],
       ], [
         "nama" => "karang-intan",
-        "koordinat" => [
+        "warna" => 'red', "koordinat" => [
           [-3.3862, 114.9637],
           [-3.3857, 114.9825],
           [-3.3893, 114.9979],
@@ -311,7 +312,7 @@ class Home extends CI_Controller
         ]
       ], [
         "nama" => "kertak-hanyar",
-        "koordinat" => [
+        "warna" => 'orange', "koordinat" => [
           [-3.4088, 114.6473],
           [-3.388, 114.6444],
           [-3.3875, 114.6361],
@@ -336,7 +337,7 @@ class Home extends CI_Controller
       ], [
 
         "nama" => "martapura",
-        "koordinat" => [
+        "warna" => 'green', "koordinat" => [
           [-3.4353, 114.8698],
           [-3.4351, 114.8675],
           [-3.4341, 114.8685],
@@ -385,7 +386,7 @@ class Home extends CI_Controller
         ]
       ], [
         "nama" => "martapura-barat",
-        "koordinat" => [
+        "warna" => '', "koordinat" => [
           [-3.4143, 114.8009],
           [-3.4068, 114.7956],
           [-3.3717, 114.7419],
@@ -418,8 +419,8 @@ class Home extends CI_Controller
         ],
       ],
       [
-        "nama" => "Martapura Timur",
-        "koordinat" => [
+        "nama" => "martapura-timur",
+        "warna" => '', "koordinat" => [
           [-3.3793, 114.8737],
           [-3.3793, 114.8737],
           [-3.3798, 114.8705],
@@ -448,7 +449,7 @@ class Home extends CI_Controller
 
       [
         "nama" => "mataraman",
-        "koordinat" => [
+        "warna" => '', "koordinat" => [
           [-3.4281, 115.0999],
           [-3.4251, 115.0942],
           [-3.4251, 115.0848],
@@ -516,7 +517,7 @@ class Home extends CI_Controller
 
       [
         "nama" => "paramasan",
-        "koordinat" => [
+        "warna" => '', "koordinat" => [
           [-3.1333, 115.4351],
           [-3.1382, 115.4278],
           [-3.1448, 115.4223],
@@ -623,7 +624,7 @@ class Home extends CI_Controller
 
       [
         "nama" => "pengaron",
-        "koordinat" => [
+        "warna" => '', "koordinat" => [
           [-3.3552, 115.0951],
           [-3.3455, 115.081],
           [-3.3362, 115.0726],
@@ -674,7 +675,7 @@ class Home extends CI_Controller
 
       [
         "nama" => "sambung-makmur",
-        "koordinat" => [
+        "warna" => '', "koordinat" => [
           [-3.268, 115.1046],
           [-3.2673, 115.1022],
           [-3.2051, 115.1129],
@@ -706,7 +707,7 @@ class Home extends CI_Controller
 
       [
         "nama" => "simpang-empat",
-        "koordinat" => [
+        "warna" => '', "koordinat" => [
           [-3.3227, 115.0411],
           [-3.3241, 115.0242],
           [-3.3224, 115.018],
@@ -760,7 +761,7 @@ class Home extends CI_Controller
 
       [
         "nama" => "sungai-pinang",
-        "koordinat" => [
+        "warna" => '', "koordinat" => [
           [-3.3632, 115.2267],
           [-3.3607, 115.2186],
           [-3.345, 115.2243],
@@ -838,7 +839,7 @@ class Home extends CI_Controller
 
       [
         "nama" => "sungai-tabuk",
-        "koordinat" => [
+        "warna" => '', "koordinat" => [
           [-3.3485, 114.7043],
           [-3.3415, 114.6953],
           [-3.3396, 114.6887],
@@ -878,7 +879,7 @@ class Home extends CI_Controller
 
       [
         "nama" => "tatah-makmur",
-        "koordinat" => [
+        "warna" => '', "koordinat" => [
           [-3.4306, 114.619],
           [-3.417, 114.6104],
           [-3.4138, 114.6053],
@@ -902,7 +903,7 @@ class Home extends CI_Controller
 
       [
         "nama" => "telaga-bauntung",
-        "koordinat" => [
+        "warna" => '', "koordinat" => [
           [-3.1138, 115.2706],
           [-3.1302, 115.2628],
           [-3.134, 115.2583],

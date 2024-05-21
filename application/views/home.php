@@ -35,7 +35,7 @@
   <div class="map w-full" id="map">
     <h1>Peta Banjar</h1>
   </div>
-  <div class="toolbar w-80 p-4">
+  <div class="toolbar hidden w-80 p-4">
     <h1 class="font-bold">Peta Hypertensi Kabupaten Banjar</h1>
     <hr class="my-2">
     <div>
@@ -56,7 +56,6 @@
 
   <script type="text/javascript">
   var map = L.map('map').setView([-3.3200, 114.9991], 13);
-
   $(document).ready(function() {
     $.ajax({
       url: "<?= base_url(); ?>index.php/home/get_kecamatan",
@@ -64,45 +63,37 @@
       dataType: "json",
       success: function(response) {
         const kecamatan = response;
-        $("#kecamatan").empty();
+
         $.each(kecamatan, function(index, kec) {
           const formatedName = kec["nama"].replace(/-/g, ' ').replace(/\b\w/g, function(char) {
             return char.toUpperCase();
           });
-          $("#kecamatan").append(`<option value="${kec["nama"]}">${formatedName}</option>`);
-        });
+          var polygon = L.polygon(kec["koordinat"], {
+            color: kec['warna']
+          }).addTo(map);
+          map.fitBounds(polygon.getBounds());
 
+          polygon.on('mouseover', function(e) {
+            var tooltip = L.tooltip({
+                permanent: false,
+                direction: 'top'
+              })
+              .setLatLng(e.latlng)
+              .setContent(formatedName)
+              .openOn(map);
+            polygon.bindTooltip(tooltip).openTooltip();
+          });
+
+          // Remove tooltip on mouseout
+          polygon.on('mouseout', function(e) {
+            polygon.unbindTooltip().closeTooltip();
+          });
+        });
       },
       error: function(xhr, status, error) {
         console.error(xhr.responseText);
       }
     });
-
-    $("#submit-kecamatan").on("click", (event) => {
-      event.preventDefault()
-      $.ajax({
-        url: "<?= base_url(); ?>index.php/home/get_kecamatan_by_name/" + $('#kecamatan').val(),
-        type: "GET",
-        dataType: "json",
-        success: function(response) {
-          const koordinat = response;
-          map.eachLayer(function(layer) {
-            if (layer instanceof L.Polygon) {
-              map.removeLayer(layer);
-            }
-          });
-
-          var polygon = L.polygon(koordinat, {
-            color: 'red'
-          }).addTo(map);
-
-          map.fitBounds(polygon.getBounds());
-        },
-        error: function(xhr, status, error) {
-          console.error(xhr.responseText);
-        }
-      });
-    })
   });
 
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
