@@ -29,7 +29,7 @@ function formatedNama(nama) {
 }
 $(document).ready(function() {
   $.ajax({
-    url: '<?= base_url(); ?>index.php/data/get_kecamatan',
+    url: '<?= base_url(); ?>index.php/data/get_kecamatan', // route akses ke controller
     type: 'GET',
     dataType: 'json',
     success: function(data) {

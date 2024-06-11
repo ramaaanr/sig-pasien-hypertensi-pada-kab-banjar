@@ -54,3 +54,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['default_controller'] = 'home';
 $route['data'] = 'data';
+$route['kecamatan'] = 'data-kecamatan';

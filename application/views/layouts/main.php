@@ -48,6 +48,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </li>
             <li class="py-2 px-4 text-white hover:bg-gray-800 flex items-center cursor-pointer">
               <span class="material-symbols-outlined">
+                dataset
+              </span>
+              <a href='<?= base_url(); ?>index.php/DataKecamatan'>Data Kecamatan</a>
+            </li>
+            <li class="py-2 px-4 text-white hover:bg-gray-800 flex items-center cursor-pointer">
+              <span class="material-symbols-outlined">
                 analytics
               </span>
               <span>Input Data</span>
