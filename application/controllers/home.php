@@ -7,7 +7,7 @@ class Home extends CI_Controller
     $data_kecamatan = [
       [
         "nama" => "aluh-aluh",
-        "warna" => '',
+        "warna" => 'red',
         "koordinat" => [
           [-3.5329, 114.6051],
           [-3.5328, 114.5859],
@@ -446,7 +446,6 @@ class Home extends CI_Controller
           [-3.3809, 114.8838],
         ],
       ],
-
       [
         "nama" => "mataraman",
         "warna" => '', "koordinat" => [
@@ -927,6 +926,7 @@ class Home extends CI_Controller
         ],
       ],
     ];
+
 
   function __construct()
   {
