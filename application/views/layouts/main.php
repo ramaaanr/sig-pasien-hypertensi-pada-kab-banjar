@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body>
   <!-- file: application/views/partials/sidebar.php -->
   <div class="flex w-100">
-    <div class="sidebar">
+    <div class="sidebar fixed">
       <div class="bg-zinc-900 h-screen w-48 flex flex-col ">
         <!-- Logo -->
         <div class="p-4">
@@ -40,29 +40,27 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <a href="<?= base_url(); ?>index.php">Peta</a>
 
             </li>
-            <li class="py-2 px-4 text-white hover:bg-gray-800 flex items-center cursor-pointer">
-              <span class="material-symbols-outlined">
-                edit_document
-              </span>
-              <a href='<?= base_url(); ?>index.php/data'>Input Data</a>
-            </li>
+
             <li class="py-2 px-4 text-white hover:bg-gray-800 flex items-center cursor-pointer">
               <span class="material-symbols-outlined">
                 dataset
               </span>
-              <a href='<?= base_url(); ?>index.php/DataKecamatan'>Data Kecamatan</a>
+              <a href='<?= base_url(); ?>index.php/DataKecamatan'>Rekapitulasi</a>
             </li>
             <li class="py-2 px-4 text-white hover:bg-gray-800 flex items-center cursor-pointer">
               <span class="material-symbols-outlined">
-                analytics
+                groups
               </span>
-              <span>Input Data</span>
+              <a href='<?= base_url(); ?>index.php/DataMasyarakat'>Input Masyarakat</a>
+
             </li>
           </ul>
         </div>
       </div>
     </div>
-    <?php echo $content; ?>
+    <div class="ml-48 w-full h-screen">
+      <?php echo $content; ?>
+    </div>
   </div>
 
 </body>

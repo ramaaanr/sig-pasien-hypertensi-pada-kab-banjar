@@ -1,12 +1,16 @@
-<div class="main-container py-16 px-16">
-  <h1 class="text-4xl font-bold mb-4">Data Kecamatan</h1>
-
+<div class="main-container py-16 px-16 w-1/2">
+  <div class="flex gap-x-4 items-center ">
+    <h1 class="text-4xl  font-bold mb-4 ">Data Kecamatan</h1>
+    <a href='<?= base_url(); ?>index.php/DataKecamatan/edit_kecamatan'
+      class="px-3 py-2 text-white text-xs font-semibold h-fit bg-blue-500 rounded-md text-center hover:bg-blue-500/80">Edit
+      Kecamatan</a>
+  </div>
   <table class="table-auto border-collapse border border-gray-300 w-full">
     <thead>
       <tr class="bg-gray-200">
         <th class="border border-gray-300 px-4 py-2 text-left text-sm font-medium text-gray-700">Nama Kecamatan</th>
-        <th class="border border-gray-300 px-4 py-2 text-left text-sm font-medium text-gray-700">Warna</th>
-        <th class="border border-gray-300 px-4 py-2 text-left text-sm font-medium text-gray-700">Populasi</th>
+        <th class="border border-gray-300 px-4 py-2 text-left text-sm font-medium text-gray-700">Jumlah Populasi</th>
+        <th class="border border-gray-300 px-4 py-2 text-left text-sm font-medium text-gray-700">Jumlah Penderita</th>
       </tr>
     </thead>
     <tbody id="table-body">
@@ -22,7 +26,7 @@ function formatedNama(nama) {
 
 $(document).ready(function() {
   $.ajax({
-    url: 'http://localhost/sig-putri/index.php/data/get_kecamatan', // route akses ke controller
+    url: '<?= base_url(); ?>index.php/DataKecamatan/get_kecamatan', // route akses ke controller
     type: 'GET',
     dataType: 'json',
     success: function(data) {
@@ -31,8 +35,8 @@ $(document).ready(function() {
         $('#table-body').append(
           `<tr>
             <td class="border border-gray-300 px-4 py-2">${formatedNama(item.nama)}</td>
-            <td class="border border-gray-300 px-4 py-2">${item.warna}</td>
-            <td class="border border-gray-300 px-4 py-2">${item.populasi}</td>
+            <td class="border border-gray-300 px-4 py-2">${item.jumlah_populasi}</td>
+            <td class="border border-gray-300 px-4 py-2">${item.jumlah_penderita}</td>
           </tr>`
         );
       });

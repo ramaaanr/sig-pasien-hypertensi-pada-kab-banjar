@@ -28,6 +28,14 @@ class DataKecamatan extends CI_Controller
     $this->output->set_content_type('application/json')->set_output(json_encode($this->kecamatan->find_record_by_id($id)));
   }
 
+  public function edit_kecamatan()
+  {
+    $data['title'] = 'Home Page';
+    $data['data'] = $this->kecamatan->get_records();
+    $data['content'] = $this->load->view('edit-kecamatan', $data, TRUE);
+    $this->load->view('layouts/main', $data);
+  }
+
   public function update()
   {
     $input = json_decode($this->input->raw_input_stream, true);

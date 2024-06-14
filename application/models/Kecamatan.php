@@ -19,10 +19,14 @@ class Kecamatan extends CI_Model
     $result = $this->db->where('id', $id)->update($this->table_name, $data);
     return $result;
   }
-
-  public function delete($id)
+  public function increment_jumlah_populasi($id, $penderita)
   {
-    $result = $this->db->delete($this->table_name, ['id' => $id]);
+    $this->db->set('jumlah_populasi', 'jumlah_populasi+1', FALSE);
+    if ($penderita === 'true') {
+      $this->db->set('jumlah_penderita', 'jumlah_penderita+1', FALSE);
+    }
+    $this->db->where('id', $id); // Adjust the condition as needed
+    $result = $this->db->update($this->table_name);
     return $result;
   }
 

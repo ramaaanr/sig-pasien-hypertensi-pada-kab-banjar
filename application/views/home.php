@@ -1,6 +1,6 @@
 <!-- file: application/views/partials/sidebar.php -->
 
-<div class="map w-full" id="map">
+<div class="map w-full h-full" id="map">
   <h1>Peta Banjar</h1>
 </div>
 
@@ -18,6 +18,7 @@ $(document).ready(function() {
         const formatedName = kec.nama.replace(/-/g, ' ').replace(/\b\w/g, function(char) {
           return char.toUpperCase();
         });
+
         var polygon = L.polygon(JSON.parse(kec.koordinat), {
           color: kec.warna
         }).addTo(map);
