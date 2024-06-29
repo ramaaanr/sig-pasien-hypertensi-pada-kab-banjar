@@ -51,8 +51,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <span class="material-symbols-outlined">
                 groups
               </span>
-              <a href='<?= base_url(); ?>index.php/DataMasyarakat'>Input Masyarakat</a>
-
+              <a href='<?= base_url(); ?>index.php/DataMasyarakat'>Data Masyarakat</a>
+            </li>
+            <li class="py-2 px-4 text-white hover:bg-gray-800 flex items-center cursor-pointer">
+              <span class="material-symbols-outlined">
+                groups
+              </span>
+              <a href='<?= base_url(); ?>index.php/DataMasyarakat/showInputMasyarakat'>Input Masyarakat</a>
             </li>
           </ul>
         </div>

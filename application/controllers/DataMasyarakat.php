@@ -13,8 +13,20 @@ class DataMasyarakat extends CI_Controller
   public function index()
   {
     $data['title'] = 'Home Page';
+    $data['content'] = $this->load->view('data-masyarakat', $data, TRUE);
+    $this->load->view('layouts/main', $data);
+  }
+  public function showInputMasyarakat()
+  {
+    $data['title'] = 'Input Masyrakat';
     $data['content'] = $this->load->view('input-masyarakat', $data, TRUE);
     $this->load->view('layouts/main', $data);
+  }
+
+  public function get_masyarakat()
+  {
+    // return json_encode($koordinat_kecamatan);
+    $this->output->set_content_type('application/json')->set_output(json_encode($this->masyarakat->get_masyarakat_with_kecamatan()));
   }
   public function insert()
   {

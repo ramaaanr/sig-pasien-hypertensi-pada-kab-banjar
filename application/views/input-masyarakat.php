@@ -351,7 +351,7 @@
       <span class="text-gray-700">Ya</span>
     </div>
     <div class="pt-4">
-      <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md">Submit</button>
+      <button id='btn-submit' type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md">Submit</button>
     </div>
   </form>
 </div>
@@ -381,7 +381,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   $('#data-masyarakat-form').on('submit', function(event) {
     event.preventDefault(); // Prevent the form from submitting traditionally
-
+    $('#btn-submit').text('Loading...')
+    $('#btn-submit').prop('disabled')
     // Collect form data
     var formData = {
       nama: $('#nama').val(),
@@ -420,11 +421,15 @@ document.addEventListener('DOMContentLoaded', function() {
       success: function(response) {
         console.log('Data successfully submitted:', response);
         // Handle success response here
+        $('#btn-submit').text('Submit')
+        $('#btn-submit').removeProp('disabled')
       },
       error: function(xhr, status, error) {
         console.error('Error submitting data:', error);
         // Handle error response here
-      }
+        $('#btn-submit').text('Submit')
+        $('#btn-submit').removeProp('disabled')
+      },
     });
   });
 

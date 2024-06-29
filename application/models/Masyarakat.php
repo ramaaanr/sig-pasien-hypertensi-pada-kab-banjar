@@ -26,11 +26,41 @@ class Masyarakat extends CI_Model
   //   return $result;
   // }
 
-  // public function get_records()
-  // {
-  //   $result = $this->db->get($this->table_name)->result();
-  //   return $result;
-  // }
+  public function get_records()
+  {
+    $result = $this->db->get($this->table_name)->result();
+    return $result;
+  }
+
+  public function get_masyarakat_with_kecamatan()
+  {
+    // Kolom yang akan diambil dari tabel masyarakat
+    $columns = [
+      'masyarakat.id',
+      'masyarakat.id_kecamatan',
+      'masyarakat.nama',
+      'masyarakat.umur',
+      'masyarakat.jenis_kelamin',
+      'masyarakat.suku_bangsa',
+      'masyarakat.agama',
+      'masyarakat.status',
+      'masyarakat.pendidikan',
+      'masyarakat.pekerjaan',
+      'masyarakat.suku'
+    ];
+
+    // Menambahkan kolom nama kecamatan dari tabel kecamatan
+    $columns[] = 'kecamatan.nama AS nama_kecamatan';
+
+    // Menyiapkan query
+    $this->db->select($columns);
+    $this->db->from('masyarakat');
+    $this->db->join('kecamatan', 'masyarakat.id_kecamatan = kecamatan.id', 'inner');
+
+    // Eksekusi query dan ambil hasilnya
+    $query = $this->db->get();
+    return $query->result();
+  }
 
   // public function find_record_by_id($id)
   // {
