@@ -1,5 +1,5 @@
 <div class="w-3/4 p-16 bg-white ">
-  <h1 class="text-4xl  font-bold mb-4 ">Input Masyrakat</h1>
+  <h1 class="text-4xl  font-bold mb-4 ">Input Penduduk</h1>
 
   <form id="data-masyarakat-form" class="space-y-4">
     <h1 class="text-2xl font-semibold mb-2">Biodata</h1>
@@ -113,7 +113,7 @@
         class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm hidden"
         placeholder="Sebutkan Suku Lainnya">
     </div>
-    <h1 class="text-2xl font-semibold mb-2">Kesehatan Masyarakat</h1>
+    <h1 class="text-2xl font-semibold mb-2">Kesehatan Penduduk</h1>
 
     <div>
 

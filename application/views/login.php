@@ -19,7 +19,7 @@
 </head>
 <body id="login-container" class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-    <div  class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <div  class="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
         <h1 class="text-xl font-bold  text-center">Sistem Informasi Geografis Pasien Hipertensi pada Kabupaten Banjar</h1>
         <div class="border-t border-t-gray-700 my-4">
             

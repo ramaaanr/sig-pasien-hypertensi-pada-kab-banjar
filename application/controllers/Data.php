@@ -8,9 +8,14 @@ class Data extends CI_Controller
   {
     parent::__construct();
     $this->load->model('kecamatan');
+    
+    $this->load->library('session');
+   
   }
   public function index()
   {
+    $isAdmin = $this->session->userdata('username') != null;
+        $data['is_admin'] = $isAdmin;
     $data['title'] = 'Home Page';
     $data['data'] = $this->kecamatan->get_records();
     $data['content'] = $this->load->view('data', $data, TRUE);

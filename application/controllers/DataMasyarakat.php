@@ -9,15 +9,23 @@ class DataMasyarakat extends CI_Controller
     parent::__construct();
     $this->load->model('kecamatan');
     $this->load->model('masyarakat');
+    
+    $this->load->library('session');
+  
   }
   public function index()
   {
+    $isAdmin = $this->session->userdata('username') != null;
+        $data['is_admin'] = $isAdmin;
     $data['title'] = 'Home Page';
     $data['content'] = $this->load->view('data-masyarakat', $data, TRUE);
+    
     $this->load->view('layouts/main', $data);
   }
   public function showInputMasyarakat()
   {
+    $isAdmin = $this->session->userdata('username') != null;
+        $data['is_admin'] = $isAdmin;
     $data['title'] = 'Input Masyrakat';
     $data['content'] = $this->load->view('input-masyarakat', $data, TRUE);
     $this->load->view('layouts/main', $data);

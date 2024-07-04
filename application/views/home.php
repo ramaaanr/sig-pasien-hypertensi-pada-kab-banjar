@@ -9,7 +9,7 @@
 var map = L.map('map').setView([-3.3200, 114.9991], 13);
 $(document).ready(function() {
   $.ajax({
-    url: "<?= base_url(); ?>index.php/data/get_kecamatan",
+    url: '<?= base_url(); ?>index.php/DataKecamatan/get_kecamatan',
     type: "GET",
     dataType: "json",
     success: function(response) {
@@ -19,8 +19,19 @@ $(document).ready(function() {
         const formatedName = kec.nama.replace(/-/g, ' ').replace(/\b\w/g, function(char) {
           return char.toUpperCase();
         });
+
+        let warna = '';
+        const ratio = kec.penderita / kec.populasi;
+        if (ratio > 0.8) {
+          warna = 'green';
+        } else if (ratio > 0.5) {
+          warna = 'orange';
+        } else {
+          warna = 'green';
+        }
+
         var polygon = L.polygon(JSON.parse(kec.koordinat), {
-          color: kec.warna
+          color: warna
         }).addTo(map);
 
         polygon.on('mouseover', function(e) {
